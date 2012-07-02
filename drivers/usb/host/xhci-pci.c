@@ -145,6 +145,7 @@ static int xhci_pci_setup(struct usb_hcd *hcd)
 			pdev->device == PCI_DEVICE_ID_ASROCK_P67) {
 		xhci->quirks |= XHCI_RESET_ON_RESUME;
 		xhci_dbg(xhci, "QUIRK: Resetting on resume\n");
+		xhci->quirks |= XHCI_TRUST_TX_LENGTH;
 	}
 
 	/* Make sure the HC is halted. */
